@@ -10,7 +10,7 @@
       </div>
     </header>
   </section>
-
+  <!--comentario-->
   <section>
     <div class="Video-container bg-slate-500">
       <video src="/public/video/xlarge_2x.mp4" autoplay muted loop></video>
