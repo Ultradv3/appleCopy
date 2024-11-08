@@ -9,7 +9,7 @@
       </ul>
     </div>
   </nav>
-  <div class="w-full bg-gray-100 h-9 text-center text-sm p-1 font-light text-gray-900">
+  <div class="w-full bg-gray-100 h-9 text-center text-sm p-1 font-normal text-gray-900">
     MLS Season Pass. Gratis con tu subscripción a Apple TV+. O un 80% menos en el plan de temporada.
     Se renovará al precio completo en 2025.
     <span class="text-blue-500 text- cursor-pointer"> Más información ></span>
