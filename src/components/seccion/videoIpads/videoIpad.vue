@@ -15,53 +15,52 @@
       <video src="/public/video/xlarge_2x.mp4" autoplay muted loop></video>
     </div>
   </section>
-
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue'
 
 export default {
   setup() {
-    const videoContainer = ref(null);
+    const videoContainer = ref(null)
 
     const handleScroll = () => {
       // Obtenemos la cantidad de desplazamiento actual
-      const scrollTop = window.scrollY;
+      const scrollTop = window.scrollY
       // Definimos desde dónde comienza el efecto y hasta dónde alcanza el máximo
-      const startScroll = 300; // Ajusta este valor para definir el inicio
-      const maxScroll = 800;   // Ajusta este valor para definir el máximo
+      const startScroll = 300 // Ajusta este valor para definir el inicio
+      const maxScroll = 800 // Ajusta este valor para definir el máximo
 
       // Solo aplicamos el efecto si el desplazamiento supera el valor inicial
       if (scrollTop > startScroll) {
         // Calculamos el porcentaje de desplazamiento desde el punto de inicio
-        const scrollPercentage = Math.min((scrollTop - startScroll) / (maxScroll - startScroll), 1);
+        const scrollPercentage = Math.min((scrollTop - startScroll) / (maxScroll - startScroll), 1)
 
         // Calculamos el `width` y `border-radius` en función del desplazamiento
-        const newWidth = 100 - scrollPercentage * 20; // Rango entre 100% y 95%
-        const newBorderRadius = scrollPercentage * 40; // Rango entre 0px y 40px
+        const newWidth = 100 - scrollPercentage * 20 // Rango entre 100% y 95%
+        const newBorderRadius = scrollPercentage * 40 // Rango entre 0px y 40px
 
         // Aplicamos los estilos
-        videoContainer.value.style.width = `${newWidth}%`;
-        videoContainer.value.style.borderRadius = `${newBorderRadius}px`;
+        videoContainer.value.style.width = `${newWidth}%`
+        videoContainer.value.style.borderRadius = `${newBorderRadius}px`
       } else {
         // Restablece los estilos cuando el scroll está por debajo de `startScroll`
-        videoContainer.value.style.width = '100%';
-        videoContainer.value.style.borderRadius = '0px';
+        videoContainer.value.style.width = '100%'
+        videoContainer.value.style.borderRadius = '0px'
       }
-    };
+    }
 
     onMounted(() => {
-      window.addEventListener('scroll', handleScroll);
-    });
+      window.addEventListener('scroll', handleScroll)
+    })
 
     onUnmounted(() => {
-      window.removeEventListener('scroll', handleScroll);
-    });
+      window.removeEventListener('scroll', handleScroll)
+    })
 
-    return { videoContainer };
+    return { videoContainer }
   },
-};
+}
 </script>
 
 <style scoped>
@@ -78,7 +77,7 @@ export default {
   overflow: hidden;
   height: 80vh;
   min-height: 680px;
-  max-width: 1920px;
+  max-width: 100%;
   max-height: 1260px;
   margin: 0 auto;
   width: 100%;
@@ -86,7 +85,9 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
-  transition: width 0.8s ease, border-radius 0.8s ease;
+  transition:
+    width 0.8s ease,
+    border-radius 0.8s ease;
 }
 
 video {
